@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/derek/Documents/College/Computer Systems II/Projects/Project2/Solution/cmake-build-debug",
-		"source" : "/home/derek/Documents/College/Computer Systems II/Projects/Project2/Solution"
+		"build" : "/home/vogen/Documents/College/Computer Systems 2/Projects/Compsys2-Beautifier/cmake-build-debug",
+		"source" : "/home/vogen/Documents/College/Computer Systems 2/Projects/Compsys2-Beautifier"
 	},
 	"version" : 
 	{

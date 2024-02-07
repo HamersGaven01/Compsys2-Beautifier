@@ -1,1 +1,1 @@
-int a,b,c
+begin c=c-b end

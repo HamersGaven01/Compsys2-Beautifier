@@ -1,4 +1,4 @@
-# Install script for directory: /home/derek/Documents/College/Computer Systems II/Projects/Project2/Solution
+# Install script for directory: /home/vogen/Documents/College/Computer Systems 2/Projects/Compsys2-Beautifier
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/derek/Documents/College/Computer Systems II/Projects/Project2/Solution/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/vogen/Documents/College/Computer Systems 2/Projects/Compsys2-Beautifier/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

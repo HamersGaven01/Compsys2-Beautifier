@@ -15,16 +15,17 @@ string factor (std::ifstream &is)
     //LPAREN expr RPAREN
     Token tok;
     tok.get(is);
+    string lhs = tok.value();
     int pos = is.tellg();
     if (tok.type() == ID)
     {
         tok.get(is);
         if(tok.type() == LPAREN)
         {
-            return "(" + exprlist(is) + ")" ;
+            return lhs + "(" + exprlist(is) + ")" ;
         }
         is.seekg(pos);
-        return tok.value();
+        return lhs;
     }
     else if(tok.type() == NUM_INT || tok.type() == NUM_REAL)
     {
@@ -58,7 +59,20 @@ string declaration(std::ifstream &is)
 string compound(ifstream &is)
 {
     //BEGIN stmtlist END
-    return "BEGIN" + stmtlist(is) + "END" ;
+    Token tok;
+    tok.get(is);
+    string lhs = tok.value();
+    if (tok.type() == BEGIN)
+    {
+        string inVal = stmtlist(is);
+        tok.get(is);
+        if (tok.type() != END)
+        {
+            cerr << " Expected 'END' , but got : " << tok << endl;
+        }
+        return lhs + inVal + tok.value();
+        //return tok.value() + stmtlist(is) + tok.value();
+    }
 }
 
 string stmtlist(ifstream &is)
@@ -66,7 +80,6 @@ string stmtlist(ifstream &is)
     //stmt | stmt SEMICOLON stmtlist
     string lhs = stmt(is);
     int pos = is.tellg();
-
     Token tok;
     tok.get(is);
 
@@ -89,8 +102,36 @@ string stmt (ifstream &is)
     //IF expr THEN compound ELSE compound |
     //WHILE LPAREN expr RPAREN compound |
     //compound
-
-    
+    Token tok;
+    tok.get(is);
+    string lhs = tok.value();
+    int pos = is.tellg();
+    if (tok.type() == ID)
+    {
+        tok.get(is);
+        if(tok.type() == LPAREN)
+        {
+            return lhs + "(" + exprlist(is) + ")"  ;
+        }
+        else if (tok.type() == ASSIGNOP)
+        {
+            return lhs + tok.value() + expr(is);
+        }
+        is.seekg(pos);
+        return tok.value();
+    }
+    else if (tok.type() == IF)
+    {
+        return "IF" + expr(is) + "THEN" + compound(is) + "ELSE" + compound(is) ;
+    }
+    else if (tok.type() == WHILE)
+    {
+        return "(" + expr(is) + ")" + compound(is) ;
+    }
+    else
+    {
+        return compound(is);
+    }
 }
 
 list<string> idlist (std::ifstream &is)

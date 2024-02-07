@@ -1,3 +1,3 @@
-/home/derek/Documents/College/Computer Systems II/Projects/Project2/Solution/cmake-build-debug/CMakeFiles/Solution.dir
-/home/derek/Documents/College/Computer Systems II/Projects/Project2/Solution/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/derek/Documents/College/Computer Systems II/Projects/Project2/Solution/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/vogen/Documents/College/Computer Systems 2/Projects/Compsys2-Beautifier/cmake-build-debug/CMakeFiles/Solution.dir
+/home/vogen/Documents/College/Computer Systems 2/Projects/Compsys2-Beautifier/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/vogen/Documents/College/Computer Systems 2/Projects/Compsys2-Beautifier/cmake-build-debug/CMakeFiles/rebuild_cache.dir

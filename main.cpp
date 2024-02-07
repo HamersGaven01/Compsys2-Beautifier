@@ -86,7 +86,10 @@ int main(int argc, char *argv[])
 
      */
 
-    cout << declaration(ifile) << endl;
+    //cout << compound(ifile) << endl;
+
+    cout << compound(ifile) << endl;
+
 
     cout << "DONE" << endl;
 
