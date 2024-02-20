@@ -1,9 +1,9 @@
-/*******************************************
- * File: main.cpp                          *
- * Author: S. Blythe                       *
- * Date: 12/2023                           *
- * PURPOSE: driver file for project 1      *
- *******************************************/
+/**************************************************
+ * File: main.cpp                                 *
+ * Authors: 63.7 % : S. Blythe, 36.3% : D. Poston *
+ * Date: 02/2024                                  *
+ * PURPOSE: driver file for project 1 and 2       *
+ **************************************************/
 
 /*
  ****** DEREK ********
@@ -17,7 +17,7 @@
 
 
 /**********
- **********  DO NOT MODIFY THIS FILE!!!!!
+ **********  DO NOT MODIFY THIS FILE!!!!! (unless it's project 2, which it is for this version)
  **********/
 
 #include <iostream>
@@ -47,53 +47,17 @@ int main(int argc, char *argv[])
         return -1;
     }
 
-/*
-    // *VERY* simple main function. Just repeatedly call Token's get method!
-    Token tok;
 
-    // (try to) get the first token
-    tok.get(ifile);
+    Grammar runner;
+    string output = runner.runGrammar(ifile);
 
-    // did the last get call say there were more tokens?
-    while( tok.type()!=EOF_TOK )
+    if(runner.isValid)
     {
-        if (tok.type()!=ERROR)
-        {
-            // print out the successfully read Token
-            cout << "Resulting token = " << tok << endl;
-        }
-        else // tok.type()==ERROR
-        {
-            cout << "Syntax error detected on line " << tok.lineNumber() << endl;
-        }
-
-        // (try to) get the next token
-        tok.get(ifile);
+        cout << "Program is VALID =========================" << endl;
+        cout << output << endl;
+        return 0;
     }
+    cout << "Program is NOT VALID ======================" << endl;
+    return -1;
 
-*/
-
-
-    cout << "START" << endl;
-
-    /*
-
-         list<string> myList = idlist(ifile);
-    for ( auto v : myList )
-    {
-        cout << v << " " ;
-    }
-
-     */
-
-    //cout << compound(ifile) << endl;
-
-    cout << compound(ifile) << endl;
-
-
-    cout << "DONE" << endl;
-
-    // NEXT TASK : DECLARATION / TYPE
-
-    return 0;
 }
